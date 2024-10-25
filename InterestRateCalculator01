@@ -1,0 +1,105 @@
+package com.mycompany.irc;
+
+/**
+ *
+ * @author ebrown2025
+ */
+import java.math.*;
+import java.text.*;
+import java.util.*;        
+//asks for variables
+
+
+// Class for calculating
+class InterestRateCalculator {
+    public static final double RATE = 0.045;
+// Interest rate of 4.5%
+    
+    private double money; // The original amount
+    private int months; // Number of months for repayment
+
+    
+    public void setmoney(double money) {
+        this.money= money;
+// Method to set the principal amount
+    }
+    
+   
+    public void setMonths(int months) {
+        this.months = months;
+     // Method to set the number of months
+    }
+    
+    
+    public String intCalc() {
+    ls
+        double remainingAmount = money;
+        double totalPaid = 0.0;
+        // Method to calculate and return payment detai
+        StringBuilder paymentInfo = new StringBuilder();
+
+        paymentDetails.append("Monthly payments breakdown:\n");
+
+        for (int month = 1; month <= months; month++) {
+            
+            double interestPayment = remainingAmount * RATE / 12;
+            // Calculate monthly interest
+            
+            double monthlyPayment = remainingAmount / (months - month + 1) + interestPayment;
+            // Calculate the current month's payment
+
+            totalPaid += months;
+            //updates total paid
+  
+            paymentDetails.append(String.format("Month %d: Payment = %s, Remaining Amount = %s%n",
+                    month, formatCurrency(monthlyPayment), formatCurrency(remainingAmount)));
+
+            
+            remainingAmount -= (monthlyPayment - interestPayment);
+            // subtract the portion of the payment
+        }
+
+        
+        paymentDetails.append(String.format("Total amount paid over %d months = %s%n", months, formatCurrency(totalPaid)));
+        paymentDetails.append(String.format("Original dollar amount = %s%n", formatCurrency(money)));
+        // Append total paid and original money amount
+
+        return paymentDetails.toString();
+    }
+
+    
+    private String formatCurrency(double amount) {
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.US);
+        return currencyFormatter.format(amount);
+        // format currency method
+    }
+}
+
+
+public class IRC {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+       
+        System.out.print("Enter dollar amount: ");
+        double amount = scanner.nextDouble();
+        // Prompt for user 
+
+        System.out.print("Enter number of months: ");
+        int months = scanner.nextInt();
+
+        
+        RateCalculator calculator = new RateCalculator();
+        calculator.setMoney(amount);
+        calculator.setMonths(months);
+        // Create intCalc Instance
+        
+        String result = calculator.intCalc();
+        // Calculate payments 
+        
+        System.out.println(result);
+        // Print results
+        
+        scanner.close();
+        // Close scanner 
+    }
