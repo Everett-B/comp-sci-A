@@ -1,0 +1,96 @@
+package com.mycompany.coursecreator;
+
+/**
+ *
+ * @author ebrown2025
+ */
+
+public class CourseCreator {
+
+    public static void main(String[] args) {
+      Course CompSci = new Course("Mr. Nelson"," Comp Sci", "AP", 4);
+      Course PhysicsC = new Course("Mrs. Raffe"," Physics C", "AP", 4);
+      //gives variables to the new course
+      Course Calculus = new Course("calculus");
+    Calculus.setCode("AP");
+    Calculus.setName("Dr. Paye");
+    Calculus.setTotal(5);
+    //gives the variables outside of course
+    System.out.print(Calculus.toString());
+    System.out.print(CompSci.toString());
+    System.out.print(PhysicsC.toString());
+    //prints out courses with toString attached
+    }
+    
+
+}
+
+   class Course  {
+    private String iName;
+    private String cTitle;
+    private String cCode;
+    private int pTotal;
+//makes variables
+
+
+public Course (String bi, String bo, String bp,  int bada ){
+   iName = bi;
+   cTitle = bo;
+   cCode = bp;
+   pTotal = bada;
+//makes a course for the variables
+}
+  public Course ( String bo ){
+iName = null;
+cTitle = bo;
+cCode = null;
+pTotal = 0;
+  }
+//makes a course for the variables but only for cTitle
+  
+  public String getTitle(){
+   return cTitle;   
+   
+  }
+  
+  public String getName(){
+   return iName;   
+   
+  }
+  
+  public int getTotal(){
+   return pTotal;   
+   
+  }
+   public String getCode(){
+   return cCode;   
+   
+  }
+  //makes getters
+   
+   
+   public void setCode(String cCode)  {
+       this.cCode = cCode;
+   }
+    public void setName(String iName)  {
+       this.iName = iName;
+   }
+    public void setTitle(String cTitle)  {
+       this.cTitle = cTitle;
+   }
+     public void setTotal(int pTotal)  {
+       this.pTotal = pTotal;
+   }
+//establishes setters
+     
+    @Override
+   public String toString(){
+  return "Course Title: " + cTitle + "\n"  
+        + "Course Instructor: " + iName + "\n"
+        + "Points Total: " + pTotal + "\n"  
+        + "Course Code: " + cCode + "\n" 
+          ;
+// returns variable to top
+  }
+}
+
