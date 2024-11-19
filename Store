@@ -1,0 +1,83 @@
+package com.mycompany.coursecreator;
+
+/**
+ *
+ * @author ebrown2025
+ */
+import java.util.Scanner;
+public class MyStore {
+    public static void main(String[] args) {
+   item Tshirt = new item("shirt", 29.99); 
+   item Shoes = new item("shoes",125.99);
+   item Jeans = new item("jeans",60.99);
+   item Jacket = new item("jacket",250.00);  
+   item Hat = new item("hat",25.99); 
+   item Shorts = new item("short",75.99);
+   item Blouse = new item ("blouse",88.99);
+   
+   double Mbudget = 250.00;
+   double total = 0;
+   String Ivalue = "";
+   Scanner Funny = new Scanner (System.in);
+    
+   System.out.println( "Hello! What would you like to purchase? Your current balance is"+ Mbudget +"$");
+    String strIn = "";
+    Ivalue = Funny.nextLine();
+    while (true){
+    if (Ivalue.equalsIgnoreCase("shirt")){
+            total = total + Tshirt.getPrice();
+            }                        
+     else if (Ivalue.equalsIgnoreCase("shoes")){
+            total = total + Shoes.getPrice();
+            }
+     else if (Ivalue.equalsIgnoreCase("jeans")){
+            total = total + Jeans.getPrice();
+            }
+     else if (Ivalue.equalsIgnoreCase("jacket")){
+            total = total + Jacket.getPrice();
+            }
+     else if (Ivalue.equalsIgnoreCase("hat")){
+            total = total + Hat.getPrice();
+            }
+     else if (Ivalue.equalsIgnoreCase("short")){
+            total = total + Shorts.getPrice();
+            }
+     else if (Ivalue.equalsIgnoreCase("blouse")){
+            total = total + Blouse.getPrice();
+            }
+       }
+    }
+    
+}
+class item{
+    private String strName;
+    private double dblPrice;
+    
+    public item (String Name, double Price){
+       strName = Name;
+       dblPrice = Price;
+        
+    }
+    public String getName(){
+   return strName;   
+   
+  }
+  
+  public double getPrice(){
+   return dblPrice;   
+   
+  }
+  
+   public void setPrice(String strName)  {
+       this.strName = strName;
+   }
+    public void setName(double dblPrice)  {
+       this.dblPrice = dblPrice;
+   }
+    @Override
+  public String toString (){
+    return "Item Name" + strName + "\n"
+    + "Price:" + dblPrice +"\n";
+    
+}
+}
