@@ -1,0 +1,35 @@
+package com.mycompany.nelsondemoshopping;
+
+import java.util.*;
+
+/**
+ *
+ * @author ebrown2025
+ */
+public class NelsonDemoShopping {
+
+    public static void main(String[] args) {
+        
+        ArrayList sL = new ArrayList ();
+        String input = "";
+        String output = "";
+        while(true){
+        Scanner s  = new Scanner(System.in);
+        System.out.println("what do you want?");
+        input = s.nextLine();
+        sL.add(input);
+        int i  = 0;
+        //establihes int variable as 
+        while (i < sL.size()){
+            System.out.println((i + 1) + " " + sL.get((i)));
+            i++;
+            //print list
+        }
+        System.out.println("do you want to remove anything?");
+        output = s.nextLine();
+        sL.remove(output);
+        //removes item from list
+        
+        }
+    }
+}
