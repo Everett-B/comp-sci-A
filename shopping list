@@ -11,12 +11,18 @@ public class NelsonDemoShopping {
     public static void main(String[] args) {
         
         ArrayList sL = new ArrayList ();
+        //new array made
         String input = "";
+        //makes a input zone
         String output = "";
+        //allows system to repeat
         while(true){
+            //if true statement
         Scanner s  = new Scanner(System.in);
+        //new scanner
         System.out.println("what do you want?");
         input = s.nextLine();
+        //variable is equal to input
         sL.add(input);
         int i  = 0;
         //establihes int variable as 
