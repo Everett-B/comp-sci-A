@@ -1,3 +1,9 @@
+package com.mycompany.stardemo;
+
+/**
+ *
+ * @author ebrown2025
+ */
 public class Stardemo {
     public static void main(String[] args) {
         final int MAX_ROWS = 10;
@@ -63,7 +69,5 @@ for (int row = MAX_ROWSD - 1; row >= 1; row--) {
     System.out.println(); 
 }
 
-    }
-}
     }
 }
