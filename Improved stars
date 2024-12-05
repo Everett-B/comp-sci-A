@@ -34,5 +34,30 @@ public class Stardemo {
             }
             System.out.println(); 
         }
+System.out.println("d.");
+int MAX_ROWSD = 5; // Number of rows for the top half of the diamond
+
+// Top half of the diamond
+for (int row = 1; row <= MAX_ROWSD; row++) {
+    for (int space = 1; space <= MAX_ROWSD - row; space++) {
+        System.out.print(" "); // Print spaces for alignment
+    }
+    for (int star = 1; star <= (2 * row - 1); star++) {
+        System.out.print("*"); // Print stars
+    }
+    System.out.println(); // Newline for the next row
+}
+
+// Bottom half of the diamond
+for (int row = MAX_ROWSD - 1; row >= 1; row--) {   
+    for (int space = 1; space <= MAX_ROWSD - row; space++) {
+        System.out.print(" "); // Print spaces for alignment
+    }
+    for (int star = 1; star <= (2 * row - 1); star++) {
+        System.out.print("*"); // Print stars
+    }
+    System.out.println(); // Newline for the next row
+}
+
     }
 }
