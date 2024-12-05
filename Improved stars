@@ -2,16 +2,16 @@ public class Stardemo {
     public static void main(String[] args) {
         final int MAX_ROWS = 10;
 
-        // Part a: Decreasing stars
+        // Part a: 
         System.out.println("a.");
         for (int row = MAX_ROWS; row >= 1; row--) {
             for (int star = 1; star <= row; star++) {
                 System.out.print("*");
             }
-            System.out.println(); // Newline for a new row
+            System.out.println(); 
         }
 
-        // Part b: Right-aligned increasing stars
+        // Part b: 
         System.out.println("b.");
         for (int row = 1; row <= MAX_ROWS; row++) {
             for (int space = 1; space <= MAX_ROWS - row; space++) {
@@ -20,10 +20,10 @@ public class Stardemo {
             for (int star = 1; star <= row; star++) {
                 System.out.print("*");
             }
-            System.out.println(); // Newline for a new row
+            System.out.println(); 
         }
 
-        // Part c: Inverted right-aligned decreasing stars
+        // Part c: 
         System.out.println("c.");
         for (int row = MAX_ROWS; row >= 1; row--) {
             for (int space = 1; space <= MAX_ROWS - row; space++) {
@@ -35,29 +35,35 @@ public class Stardemo {
             System.out.println(); 
         }
 System.out.println("d.");
-int MAX_ROWSD = 5; // Number of rows for the top half of the diamond
+int MAX_ROWSD = 10; 
+// Number of rows for the top half of the diamond
 
 // Top half of the diamond
 for (int row = 1; row <= MAX_ROWSD; row++) {
     for (int space = 1; space <= MAX_ROWSD - row; space++) {
-        System.out.print(" "); // Print spaces for alignment
+        System.out.print(" "); 
+// Print spaces for alignment
     }
     for (int star = 1; star <= (2 * row - 1); star++) {
-        System.out.print("*"); // Print stars
+        System.out.print("*"); 
+// Print stars
     }
-    System.out.println(); // Newline for the next row
+    System.out.println(); 
 }
 
 // Bottom half of the diamond
 for (int row = MAX_ROWSD - 1; row >= 1; row--) {   
     for (int space = 1; space <= MAX_ROWSD - row; space++) {
-        System.out.print(" "); // Print spaces for alignment
+        System.out.print(" "); 
     }
     for (int star = 1; star <= (2 * row - 1); star++) {
-        System.out.print("*"); // Print stars
+        System.out.print("*"); 
+// Print stars
     }
-    System.out.println(); // Newline for the next row
+    System.out.println(); 
 }
 
+    }
+}
     }
 }
