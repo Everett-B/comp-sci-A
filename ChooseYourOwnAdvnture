@@ -1,33 +1,53 @@
 import java.util.Scanner;
+
 public class ChooseYourOwnAdventure {
 
     public static void main(String[] args) {
         Scanner Googly = new Scanner(System.in);
         String decision;
-       System.out.println("Welcome to your own personal dungeon crawl!");
-       
-       System.out.println("You enter a very dark and dusty dungeon, located beneath an abandoned castle.  As you enter the corridor splits into two hallways"
-               + "which one do you choose? L or R?");
-       decision = Googly.nextLine();
-       if (Googly.equals("L")){
-           System.out.println(" a large cauldron sits in the center of the room, with 3 different vials of liquid, which one do you add to the cauldron?  "
-                   + "Green, Pink, or Yellow?");
-           if (Googly.equals("Green")){
-               System.out.println("""
-                                  the pot thickens and gurgles as the green fluid is added, the smoke rising off the pot becomes closer to a fog as it coagulates.  
-                                  The fog fills your lungs, and you feel tired, and fall asleep.  
-                                  When you awake you find yourself wrapped in chains suspended above a fire,
-                                  with three,squat, goblins slowly rotating you, trying to make sure you're perfectly cooked.  
-                                  What do you do?
-                                  A:  threaten the goblins to let you go 
-                                  B: try to wriggle out of the chains 
-                                  C: try to reason with them""");
-           }
-           
-           
-       }
-       if (Googly.equals("R")){
-           System.out.println("you win!");
-       }
+
+        System.out.println("Welcome to your own personal dungeon crawl!");
+
+        System.out.println("""
+            You enter a very dark and dusty dungeon, located beneath an abandoned castle. 
+            As you enter, the corridor splits into two hallways.
+            Which one do you choose? L or R?
+        """);
+
+        decision = Googly.nextLine(); // Read the user's choice
+
+        if (decision.equalsIgnoreCase("L")) {
+            System.out.println("""
+                A large cauldron sits in the center of the room, with 3 different vials of liquid. 
+                Which one do you add to the cauldron? Green, Pink, or Yellow?
+            """);
+            decision = Googly.nextLine(); // Update decision for the nested choice
+
+            if (decision.equalsIgnoreCase("Green")) {
+                System.out.println("""
+                    The pot thickens and gurgles as the green fluid is added. The smoke rising off 
+                    the pot becomes closer to a fog as it coagulates. The fog fills your lungs, and 
+                    you feel tired and fall asleep. When you awake, you find yourself wrapped in 
+                    chains suspended above a fire, with three squat goblins slowly rotating you, 
+                    trying to make sure you're perfectly cooked. 
+                    What do you do?
+                    A: Threaten the goblins to let you go
+                    B: Try to wriggle out of the chains
+                    C: Try to reason with them
+                """);
+                decision = Googly.nextLine(); // Update decision again for the next choice
+
+                // You can add more conditions here based on the next decision
+            } else {
+                System.out.println("You made a different choice, but nothing happens yet.");
+            }
+
+        } else if (decision.equalsIgnoreCase("R")) {
+            System.out.println("You win!");
+        } else {
+            System.out.println("Invalid choice! Please restart the game.");
+        }
+
+        Googly.close(); // Close the scanner to free resources
     }
 }
