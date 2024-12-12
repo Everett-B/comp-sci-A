@@ -1,0 +1,109 @@
+import java.util.Scanner;
+
+public class ChooseYourOwnAdventure {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(formatText("Start: walk down corridor, left and right tunnel"));
+
+        System.out.println(formatText("Which tunnel do you choose? L or R?"));
+        String decision = scanner.nextLine();
+
+        if (decision.equalsIgnoreCase("L")) {
+            System.out.println(formatText("A large cauldron sits in the center of the room, with 3 different vials of liquid. Which one do you add to the cauldron? Pink, Green, or Yellow?"));
+            String vialChoice = scanner.nextLine();
+
+            switch (vialChoice.toLowerCase()) {
+                case "pink":
+                    System.out.println(formatText("The cauldron immediately boils over, spilling a very viscous and foul liquid everywhere in the proximity. This forces you to run out of the room, leaving only the right room remaining. Do you enter it? Y or N?"));
+                    String enterRight = scanner.nextLine();
+                    if (enterRight.equalsIgnoreCase("Y")) {
+                        handleRightTunnel(scanner);
+                    } else {
+                        System.out.println(formatText("You realize that this will probably lead to your death, so you make the smart decision to go back to your regular life instead of gambling your life away in this dusty hole in the ground. Smart Choice."));
+                    }
+                    return;
+                case "yellow":
+                    System.out.println(formatText("The cauldron turns into a sickening yellow color and begins to bubble and smoke. Suddenly the pot explodes and sends shrapnel through your skull, killing you instantly. Sorry, should've chosen better."));
+                    return;
+                case "green":
+                    System.out.println(formatText("The pot thickens and gurgles as the green fluid is added, the smoke rising off the pot becomes closer to a fog as it coagulates. The fog fills your lungs, and you feel tired, and fall asleep. When you awake you find yourself wrapped in chains suspended above a fire, with three squat goblins slowly rotating you, trying to make sure you're perfectly cooked. What do you do?\nA: threaten the goblins to let you go\nB: try to wriggle out of the chains\nC: try to reason with them"));
+                    String goblinChoice = scanner.nextLine();
+                    switch (goblinChoice.toUpperCase()) {
+                        case "A":
+                            System.out.println(formatText("They do not let you go, as they do not speak your language, since they only speak goblin. You struggle some more, and after you realize the venture's pointless, you give up and accept your fate. Sorry dude, better luck next time."));
+                            break;
+                        case "B":
+                            System.out.println(formatText("The chains immediately break and fall off you. Fortunately, one of the goblins must've forgotten to make sure the chains were rusted. Unfortunately, you forget that you're resting over a fire and immediately fall into it, burning to death after a short while. Sorry dude, better luck next time."));
+                            break;
+                        case "C":
+                            System.out.println(formatText("As you try to beg and plead with this pack of goblins, they ignore your pleas and continue to rotate you around the fire. It appears that they only speak goblin, so your cries fall on deaf ears. Sorry dude, better luck next time."));
+                            break;
+                        default:
+                            System.out.println(formatText("Invalid choice. The goblins eat you."));
+                    }
+                    return;
+                default:
+                    System.out.println(formatText("Invalid choice. The cauldron explodes unexpectedly, killing you."));
+                    return;
+            }
+        } else if (decision.equalsIgnoreCase("R")) {
+            handleRightTunnel(scanner);
+        } else {
+            System.out.println(formatText("Invalid choice. You wander aimlessly and die of starvation."));
+        }
+
+        scanner.close();
+    }
+
+    private static void handleRightTunnel(Scanner scanner) {
+        System.out.println(formatText("The tunnel snakes downwards, leading further into the earth, and becoming increasingly more narrow and cramped. Suddenly the tunnel opens into another large cavern, with a ravine splitting it in two. On the other side is a table with three chalices. How do you try to cross the ravine?\nD: try and scale the walls on the sides of the cavern\nE: try and clear the ravine by jumping\nF: look for something to use as a bridge"));
+        String ravineChoice = scanner.nextLine();
+
+        switch (ravineChoice.toUpperCase()) {
+            case "D":
+                System.out.println(formatText("You attempt to climb the walls along the side of the cavern, instead of jumping across the large gap like a fool. The climb is tough, but after a few minutes the deed is done and you make it across. The table rests in front of you, with three unique chalices. One is made of wood, one is made of glass, and the final one is made of iron. All three are full of water. Which one do you drink from?\nI: the Wooden Cup\nJ: the Glass Cup\nK: the Iron Cup"));
+                String chaliceChoice = scanner.nextLine();
+                handleChaliceChoice(chaliceChoice);
+                break;
+            case "E":
+                System.out.println(formatText("As you take a running leap, you start to run toward the ledge of the ravine to try and jump across. As you get to the lip of the cliff, it breaks beneath your foot and you fall to your death thousands of feet below, like an idiot. That wasn’t a bright idea in retrospect you realize, as the wind rushes past your face, as you accept your demise."));
+                return;
+            case "F":
+                System.out.println(formatText("You look around and see a conveniently placed wooden plank next to you, which appears to be the perfect length to cross the ravine with. You pick it up and place it across, and begin to walk across it. As you are halfway across, a flock of bats rushes up from beneath you and causes you to wobble. How do you stabilize yourself?\nG: get low and pray\nH: grab onto the bats and attempt to join the swarm"));
+                String stabilizeChoice = scanner.nextLine();
+                handleStabilizeChoice(stabilizeChoice);
+                break;
+            default:
+                System.out.println(formatText("Invalid choice. You fall into the ravine."));
+        }
+    }
+
+    private static void handleChaliceChoice(String chaliceChoice) {
+        switch (chaliceChoice.toUpperCase()) {
+            case "I":
+                System.out.println(formatText("Just like in Indiana Jones the wooden cup is the right choice, and like Indiana Jones you also gain immortality. Congratulations, you have beaten the dungeon and won the prize!"));
+                break;
+            case "J":
+                System.out.println(formatText("As you pick up the glass cup, you bring it to your lips and take a sip. The water tastes fine, but this is a reference to Indiana Jones and you chose the wrong cup, so you immediately start to age, dying after a few minutes."));
+                return;
+            case "K":
+                System.out.println(formatText("As you drink from the cup, you realize that this water has probably been in the cup for a long time, causing rust to accumulate at the bottom of the cup. You think of this as you drink, and then a sharp pain fills your body. You have contracted magical tetanus, and die immediately because of this. Sorry dude, that really sucks."));
+                return;
+            default:
+                System.out.println(formatText("Invalid choice. The chalices all disappear, and you die of thirst."));
+        }
+    }
+
+    private static void handleStabilizeChoice(String stabilizeChoice) {
+        switch (stabilizeChoice.toUpperCase()) {
+            case "G":
+                System.out.println(formatText("You get low and pray. Miraculously, the bats disperse, and you make it across safely. Congratulations!"));
+                break;
+            case "H":
+                System.out.println(formatText("You grab onto the bats and attempt to join the swarm. Unfortunately, the bats do not take kindly to your intrusion and drop you into the ravine. You die."));
+                return;
+            default:
+                System.out.println(formatText("Invalid choice. You fall into the ravine."));
+        }
+    }
