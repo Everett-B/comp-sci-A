@@ -1,0 +1,37 @@
+public class ToDoList {
+
+    public static void main(String[] args) {
+       
+    }
+}
+public interface Priority {
+    void setPriority(int priority);
+    int getPriority();
+    
+}
+
+public interface Complexity {
+ void setPriority(int priority);
+ int getComplexity();
+    
+}
+
+public class Task {
+    private String name;
+    private int priority;
+    private int complexity;
+    
+    public Task(String name,int priority,int complexity){
+        this.name = name;
+        setPriority(priority);
+        setComplexity(complexity);
+    }
+    @Override
+    public int setPriority(int priority){
+        return priority;
+        
+    }
+    @Override
+    public int setComplexity(int complexity){
+        void setPriority(int priority);
+}
