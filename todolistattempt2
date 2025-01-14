@@ -1,0 +1,74 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ToDoList {
+    public static void main(String[] args) {
+    }
+}
+
+interface Priority {
+    void setPriority(int priority);
+    int getPriority();
+}
+
+interface Complexity {
+    void setComplexity(int complexity);
+    int getComplexity();
+}
+
+class Task implements Priority, Complexity, Comparable<Task> {
+    private String name;
+    private int priority;
+    private int complexity;
+
+    // Constructor
+    public Task(String name, int priority, int complexity) {
+        this.name = name;
+        setPriority(priority);
+        setComplexity(complexity);
+    }
+
+    // Priority methods
+    @Override
+    public void setPriority(int priority) {
+        if (priority < 1) {
+            throw new IllegalArgumentException("Priority must be 1 or higher.");
+        }
+        this.priority = priority;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    // Complexity methods
+    @Override
+    public void setComplexity(int complexity) {
+        if (complexity < 1) {
+            throw new IllegalArgumentException("Complexity must be 1 or higher.");
+        }
+        this.complexity = complexity;
+    }
+
+    @Override
+    public int getComplexity() {
+        return complexity;
+    }
+
+    // Comparable 
+    @Override
+    public int compareTo(Task other) {
+        // Compare by priority first, then complexity
+        if (this.priority != other.priority) {
+            return Integer.compare(this.priority, other.priority);
+        }
+        return Integer.compare(this.complexity, other.complexity);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Task: %s, Priority: %d, Complexity: %d", name, priority, complexity);
+    }
+}
