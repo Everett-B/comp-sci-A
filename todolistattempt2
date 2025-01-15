@@ -1,40 +1,30 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class ToDoList {
-    public static void main(String[] args) {
-    }
-}
-
+   // Priority Interface
 interface Priority {
     void setPriority(int priority);
     int getPriority();
 }
 
+// Complexity Interface
 interface Complexity {
     void setComplexity(int complexity);
     int getComplexity();
 }
 
+// Task Class
 class Task implements Priority, Complexity, Comparable<Task> {
     private String name;
     private int priority;
     private int complexity;
 
-    // Constructor
     public Task(String name, int priority, int complexity) {
         this.name = name;
-        setPriority(priority);
-        setComplexity(complexity);
+        this.priority = priority;
+        this.complexity = complexity;
     }
 
-    // Priority methods
+    // Priority Interface Methods
     @Override
     public void setPriority(int priority) {
-        if (priority < 1) {
-            throw new IllegalArgumentException("Priority must be 1 or higher.");
-        }
         this.priority = priority;
     }
 
@@ -43,12 +33,9 @@ class Task implements Priority, Complexity, Comparable<Task> {
         return priority;
     }
 
-    // Complexity methods
+    // Complexity Interface Methods
     @Override
     public void setComplexity(int complexity) {
-        if (complexity < 1) {
-            throw new IllegalArgumentException("Complexity must be 1 or higher.");
-        }
         this.complexity = complexity;
     }
 
@@ -57,10 +44,10 @@ class Task implements Priority, Complexity, Comparable<Task> {
         return complexity;
     }
 
-    // Comparable 
+    // Comparable Interface Method
     @Override
     public int compareTo(Task other) {
-        // Compare by priority first, then complexity
+        // Compare first by priority, then by complexity if priorities are equal
         if (this.priority != other.priority) {
             return Integer.compare(this.priority, other.priority);
         }
@@ -69,6 +56,34 @@ class Task implements Priority, Complexity, Comparable<Task> {
 
     @Override
     public String toString() {
+        return "Task{name='" + name + "', priority=" + priority + ", complexity=" + complexity + "}";
+    }
+}
+
+// Driver Class
+public class ToDoList {
+    public static void main(String[] args) {
+        // Instantiate Tasks
+        Task task1 = new Task("first task", 2, 5);
+        Task task2 = new Task("secondary task", 1, 2);
+        Task task3 = new Task("tertiary task", 3, 4);
+        Task task4 = new Task("final task", 2, 3);
+
+        // Add Tasks to an Array
+        Task[] tasks = {task1, task2, task3, task4};
+
+        // Sort Tasks by Priority, then Complexity
+        java.util.Arrays.sort(tasks);
+
+        // Display Sorted Tasks
+        System.out.println("Tasks sorted by priority and complexity:");
+        for (Task task : tasks) {
+            System.out.println(task);
+        }
+    }
+}
+
+
         return String.format("Task: %s, Priority: %d, Complexity: %d", name, priority, complexity);
     }
 }
