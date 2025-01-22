@@ -1,0 +1,102 @@
+public class StudentStuff {
+    private String firstName, lastName;
+    private Course[] courses; // Array to store 3 courses
+
+    // Default constructor
+    public StudentStuff() {
+        firstName = "";
+        lastName = "";
+        courses = new Course[3];
+        //establishes number of new courses
+        for (int i = 0; i < courses.length; i++) {
+            courses[i] = new Course();
+        }
+    }
+
+    // Overloaded constructor
+    public StudentStuff(String first, String last) {
+        firstName = first;
+        lastName = last;
+        courses = new Course[3];
+        for (int i = 0; i < courses.length; i++) {
+            courses[i] = new Course();
+        }
+    }
+
+    // Set test score for a specific course
+    public void setTestScore(int courseIndex, int score) {
+        if (courseIndex >= 0 && courseIndex < courses.length) {
+            courses[courseIndex].setTestScore(score);
+        }
+    }
+
+    // Get test score for a specific course
+    public int getTestScore(int courseIndex) {
+        if (courseIndex >= 0 && courseIndex < courses.length) {
+            //if course index is greater/equal to
+            return courses[courseIndex].getTestScore();
+        }
+        return -1; // Invalid index
+    }
+
+    // Calculate the average test score
+    public double getAverage() {
+        int total = 0;
+        for (Course course : courses) {
+            total += course.getTestScore();
+        }
+        return total / (double) courses.length;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder(firstName + " " + lastName + "\n");
+        //new string builder with variables firstName and lastName used
+        for (int i = 0; i < courses.length; i++) {
+            result.append("Course ").append(i + 1).append(" Score: ").append(courses[i].getTestScore()).append("\n");
+        }
+        result.append("Average Score: ").append(getAverage());
+        return result.toString();
+    }
+
+    // Inner Course class
+    private class Course {
+        private int testScore;
+        //establishes that test score exists inside the private class
+
+        public Course() {
+            testScore = 0; 
+        }
+
+        public void setTestScore(int score) {
+            testScore = score;
+            //setters for test score
+        }
+
+        public int getTestScore() {
+            return testScore;
+            //getters for test score
+        }
+    }
+
+    // Driver class
+    public static void main(String[] args) {
+        StudentStuff student1 = new StudentStuff("Johnny", "Walker");
+        student1.setTestScore(0, 85);
+        student1.setTestScore(1, 90);
+        student1.setTestScore(2, 88);
+        //student 1 variables
+
+        System.out.println(student1);
+
+        StudentStuff student2 = new StudentStuff("Shiria", "Law");
+        student2.setTestScore(0, 78);
+        student2.setTestScore(1, 82);
+        student2.setTestScore(2, 91);
+        //student 2 variable
+
+        System.out.println(student2);
+    }
+}
+
