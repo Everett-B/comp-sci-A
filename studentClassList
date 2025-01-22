@@ -97,6 +97,14 @@ public class StudentStuff {
         //student 2 variable
 
         System.out.println(student2);
+        
+        StudentStuff student3 = new StudentStuff("Saddam", "Hustoff");
+        student3.setTestScore(0, 64);
+        student3.setTestScore(1, 76);
+        student3.setTestScore(2, 53);
+        //student 2 variable
+
+        System.out.println(student3);
     }
 }
 
