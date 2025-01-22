@@ -102,7 +102,7 @@ public class StudentStuff {
         student3.setTestScore(0, 64);
         student3.setTestScore(1, 76);
         student3.setTestScore(2, 53);
-        //student 2 variable
+        //student 3 variables
 
         System.out.println(student3);
     }
