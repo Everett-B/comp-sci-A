@@ -2,19 +2,22 @@ import java.util.*;
 public class Arrayexample {
 public static void main(String[] args){
     
-// establish the suits and values
+
     String[] suits = {"Spades", "Hearts", "Diamonds","Clubs"};
     String[] values  = {"Ace", "2","3","4","5","6","7","8","9","10", "Jack", "King", "Queen"};
-    
+// establish the suits and values
     
     List<String> deck = new ArrayList<>();
+// creates new array
     for (String suit : suits){
     for (String value : values){
         deck.add(value + " of " + suit);
+// formats the aray to have suits infront of values
         }
     }
     
     Collections.shuffle(deck);
+// randomly shuffles cards
 String[][] hands = new String [4][5];
 //4 players, each get 5 cards
 int cardIndexie = 0;
@@ -29,6 +32,7 @@ for (int i = 0; i < 4; i++){
     System.out.println("Player" + player + "'s hand:");
     for (int j = 0; j < 5; j++){
         System.out.println(" " + hands[i][j]);
+// prints out hand when the for statement is reached
     }
     System.out.println();
     player++;
