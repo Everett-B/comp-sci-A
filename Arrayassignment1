@@ -1,0 +1,26 @@
+public class WeekDaysArray {
+    public static void main(String[] args) {
+        // Initialize an array with all 7 days of the week
+        String[] weekDays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
+        // Print all 7 days, one per row
+        System.out.println("Full week:");
+        for (String day : weekDays) {
+            System.out.println(day);
+        }
+
+        // Resize the array to hold only weekdays (5 elements)
+        String[] workDays = new String[5]; // New array of size 5
+
+        // Copy only the first 5 elements (Monday to Friday)
+        for (int i = 0; i < 5; i++) {
+            workDays[i] = weekDays[i];
+        }
+
+        // Print only the weekdays
+        System.out.println("\nWeekdays only:");
+        for (String day : workDays) {
+            System.out.println(day);
+        }
+    }
+}
