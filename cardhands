@@ -1,0 +1,37 @@
+import java.util.*;
+public class Arrayexample {
+public static void main(String[] args){
+    
+// establish the suits and values
+    String[] suits = {"Spades", "Hearts", "Diamonds","Clubs"};
+    String[] values  = {"Ace", "2","3","4","5","6","7","8","9","10", "Jack", "King", "Queen"};
+    
+    
+    List<String> deck = new ArrayList<>();
+    for (String suit : suits){
+    for (String value : values){
+        deck.add(value + " of " + suit);
+        }
+    }
+    
+    Collections.shuffle(deck);
+String[][] hands = new String [4][5];
+//4 players, each get 5 cards
+int cardIndexie = 0;
+
+for (int i = 0; i < 4;i++) {
+    for (int j = 0; j < 5; j++){
+        hands[i][j] = deck.get(cardIndexie++);
+    }
+}
+char player = 'A';
+for (int i = 0; i < 4; i++){
+    System.out.println("Player" + player + "'s hand:");
+    for (int j = 0; j < 5; j++){
+        System.out.println(" " + hands[i][j]);
+    }
+    System.out.println();
+    player++;
+}
+}
+}
