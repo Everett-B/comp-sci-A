@@ -1,0 +1,297 @@
+// The Base Vehicle Class, 
+public class Vehicle implements Speedometer {
+    protected String brandName;
+    protected double speed;
+    protected int passengers;
+    protected double cargoWeight;
+
+    public Vehicle() {
+        this("", 0.0, 0, 0.0);
+    }
+
+    public Vehicle(String brandName, double speed, int passengers, double cargoWeight) {
+        this.brandName = brandName;
+        this.speed = speed;
+        this.passengers = passengers;
+        this.cargoWeight = cargoWeight;
+    }
+
+    public String getBrandName() { return brandName; }
+    public void setBrandName(String brandName) { this.brandName = brandName; }
+
+    public double getSpeed() { return speed; }
+    public void setSpeed(double speed) { this.speed = speed; }
+
+    public int getPassengers() { return passengers; }
+    public void setPassengers(int passengers) { this.passengers = passengers; }
+
+    public double getCargoWeight() { return cargoWeight; }
+    public void setCargoWeight(double cargoWeight) { this.cargoWeight = cargoWeight; }
+
+    @Override
+    public String toString() {
+        return "Brand: \t\t\t" + brandName + "\n" +
+               "Speed (mph): \t" + speed + "\n" +
+               "Passengers: \t" + passengers + "\n" +
+               "Cargo (lbs): \t" + cargoWeight + "\n";
+    }
+}
+
+public interface Speedometer {
+    void setSpeed(double speed);
+    double getSpeed();
+}
+
+// Car Class inherits from Vehicle
+public class Car extends Vehicle {
+    private int wheels = 4;
+    private String color;
+    private boolean spoiler;
+    private boolean stereo;
+    private double mpg;
+
+    public Car(String brandName, double speed, int passengers, double cargoWeight, double mpg, String color) {
+        super(brandName, speed, passengers, cargoWeight);
+        this.mpg = mpg;
+        this.color = color;
+        this.spoiler = false;
+        this.stereo = false;
+    }
+
+    public boolean isSpoiler() { return spoiler; }
+    public void setSpoiler(boolean spoiler) { this.spoiler = spoiler; }
+
+    public boolean isStereo() { return stereo; }
+    public void setStereo(boolean stereo) { this.stereo = stereo; }
+
+    public double getMpg() { return mpg; }
+    public void setMpg(double mpg) { this.mpg = mpg; }
+
+    @Override
+    public double getSpeed() { return spoiler ? super.getSpeed() + 20 : super.getSpeed(); }
+
+    @Override
+    public String toString() {
+        return super.toString() + "MPG:\t\t\t" + getMpg() + "\nColor:\t\t" + color + "\n";
+    }
+}
+
+// School Bus Class inheriting from Car
+public class SchoolBus extends Car {
+    private boolean emergencyExit;
+    private boolean passengerDoor;
+
+    public SchoolBus(String brandName, double speed, int passengers, double cargoWeight, double mpg, String color) {
+        super(brandName, speed, passengers, cargoWeight, mpg, color);
+        this.emergencyExit = true;
+        this.passengerDoor = true;
+    }
+
+    public boolean hasEmergencyExit() { return emergencyExit; }
+    public boolean hasPassengerDoor() { return passengerDoor; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Emergency Exit:\t" + emergencyExit + "\nPassenger Door:\t" + passengerDoor + "\n";
+    }
+}
+
+// Tractor Class inheriting from Car
+public class Tractor extends Car {
+    private boolean farmHitch;
+
+    public Tractor(String brandName, double speed, int passengers, double cargoWeight, double mpg, String color) {
+        super(brandName, speed, passengers, cargoWeight, mpg, color);
+        this.farmHitch = true;
+    }
+
+    public boolean hasFarmHitch() { return farmHitch; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Farm Equipment Hitch:\t" + farmHitch + "\n";
+    }
+}
+
+// Boat Class inheriting from Vehicle
+public class Boat extends Vehicle {
+    private int engines;
+    private double knots;
+
+    public Boat(String brandName, double speed, int passengers, double cargoWeight, int engines, double knots) {
+        super(brandName, speed, passengers, cargoWeight);
+        this.engines = engines;
+        this.knots = knots;
+    }
+
+    public int getEngines() { return engines; }
+    public double getKnots() { return knots; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Engines:\t\t" + engines + "\nKnots:\t\t" + knots + "\n";
+    }
+}
+
+// Submarine Class inheriting from Boat
+public class Submarine extends Boat {
+    private double depthRating;
+
+    public Submarine(String brandName, double speed, int passengers, double cargoWeight, int engines, double knots, double depthRating) {
+        super(brandName, speed, passengers, cargoWeight, engines, knots);
+        this.depthRating = depthRating;
+    }
+
+    public double getDepthRating() { return depthRating; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Depth Rating:\t" + depthRating + " meters\n";
+    }
+}
+
+// Train Class inheriting from Vehicle
+public class Train extends Vehicle {
+    private int carCount;
+
+    public Train(String brandName, double speed, int passengers, double cargoWeight, int carCount) {
+        super(brandName, speed, passengers, cargoWeight);
+        this.carCount = carCount;
+    }
+
+    public int getCarCount() { return carCount; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Car Count:\t\t" + carCount + "\n";
+    }
+}
+
+// Aircraft Carrier Class inheriting from Boat
+public class AircraftCarrier extends Boat {
+    private int planeCapacity;
+
+    public AircraftCarrier(String brandName, double speed, int passengers, double cargoWeight, int engines, double knots, int planeCapacity) {
+        super(brandName, speed, passengers, cargoWeight, engines, knots);
+        this.planeCapacity = planeCapacity;
+    }
+
+    public int getPlaneCapacity() { return planeCapacity; }
+    public void setPlaneCapacity(int planeCapacity) { this.planeCapacity = planeCapacity; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Plane Capacity:\t" + planeCapacity + "\n";
+    }
+}
+
+// Plane Class inheriting from Vehicle
+public class Plane extends Vehicle {
+    private double wingLength;
+    private double maxAltitude;
+
+    public Plane(String brandName, double speed, int passengers, double cargoWeight, double wingLength, double maxAltitude) {
+        super(brandName, speed, passengers, cargoWeight);
+        this.wingLength = wingLength;
+        this.maxAltitude = maxAltitude;
+    }
+
+    public double getWingLength() { return wingLength; }
+    public void setWingLength(double wingLength) { this.wingLength = wingLength; }
+
+    public double getMaxAltitude() { return maxAltitude; }
+    public void setMaxAltitude(double maxAltitude) { this.maxAltitude = maxAltitude; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Wing Length:\t" + wingLength + " ft\n" +
+               "Max Altitude:\t" + maxAltitude + " ft\n";
+    }
+}
+// ApacheHelicopter Class inheriting from Plane
+public class ApacheHelicopter extends Plane {
+    private double rotorSpeed; // in RPM
+
+    public ApacheHelicopter(String brandName, double speed, int passengers, double cargoWeight, double wingLength, double maxAltitude, double rotorSpeed) {
+        super(brandName, speed, passengers, cargoWeight, wingLength, maxAltitude);
+        this.rotorSpeed = rotorSpeed;
+    }
+
+    public double getRotorSpeed() { return rotorSpeed; }
+    public void setRotorSpeed(double rotorSpeed) { this.rotorSpeed = rotorSpeed; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Rotor Speed:\t" + rotorSpeed + " RPM\n";
+    }
+}
+
+// Drone Class inheriting from Plane
+public class Drone extends Plane {
+    private double distanceFromController; // in meters
+
+    public Drone(String brandName, double speed, int passengers, double cargoWeight, double wingLength, double maxAltitude, double distanceFromController) {
+        super(brandName, speed, passengers, cargoWeight, wingLength, maxAltitude);
+        this.distanceFromController = distanceFromController;
+    }
+
+    public double getDistanceFromController() { return distanceFromController; }
+    public void setDistanceFromController(double distanceFromController) { this.distanceFromController = distanceFromController; }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Distance From Controller:\t" + distanceFromController + " meters\n";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating instances of different vehicles
+
+        // Car
+        Car myCar = new Car("Toyota", 60.0, 5, 500, 30.0, "Red");
+        myCar.setSpoiler(true);  // Enable spoiler for testing
+        System.out.println(myCar);
+        
+        // SchoolBus
+        SchoolBus myBus = new SchoolBus("Bluebird", 45.0, 50, 2000, 8.0, "Yellow");
+        System.out.println(myBus);
+        
+        // Tractor
+        Tractor myTractor = new Tractor("John Deere", 25.0, 1, 2000, 10.0, "Green");
+        System.out.println(myTractor);
+        
+        // Boat
+        Boat myBoat = new Boat("Yamaha", 35.0, 6, 800, 2, 30.0);
+        System.out.println(myBoat);
+        
+        // Submarine
+        Submarine mySub = new Submarine("Nautilus", 30.0, 20, 5000, 2, 25.0, 300);
+        System.out.println(mySub);
+        
+        // Train
+        Train myTrain = new Train("Locomotive", 80.0, 300, 10000, 10);
+        System.out.println(myTrain);
+        
+        // AircraftCarrier
+        AircraftCarrier myCarrier = new AircraftCarrier("USS Nimitz", 35.0, 5000, 200000, 4, 40.0, 90);
+        System.out.println(myCarrier);
+        
+        // Plane
+        Plane myPlane = new Plane("Boeing", 500.0, 150, 30000, 60.0, 35000);
+        System.out.println(myPlane);
+        
+        // ApacheHelicopter
+        ApacheHelicopter myHelicopter = new ApacheHelicopter("Apache", 180.0, 2, 1000, 15.0, 20000, 350);
+        System.out.println(myHelicopter);
+        
+        // Drone
+        Drone myDrone = new Drone("DJI", 20.0, 0, 5, 2.0, 500, 1000);
+        System.out.println(myDrone);
+    }
+}
+
+
+}
+
+
