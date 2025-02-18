@@ -27,6 +27,7 @@ public class Vehicle implements Speedometer {
 
     public double getCargoWeight() { return cargoWeight; }
     public void setCargoWeight(double cargoWeight) { this.cargoWeight = cargoWeight; }
+// returns formatted string representing the vehicles info
 
     @Override
     public String toString() {
@@ -36,7 +37,7 @@ public class Vehicle implements Speedometer {
                "Cargo (lbs): \t" + cargoWeight + "\n";
     }
 }
-
+// defines speed related methods
 public interface Speedometer {
     void setSpeed(double speed);
     double getSpeed();
@@ -50,6 +51,7 @@ public class Car extends Vehicle {
     private boolean stereo;
     private double mpg;
 
+//initilizes car attributes
     public Car(String brandName, double speed, int passengers, double cargoWeight, double mpg, String color) {
         super(brandName, speed, passengers, cargoWeight);
         this.mpg = mpg;
@@ -67,9 +69,11 @@ public class Car extends Vehicle {
     public double getMpg() { return mpg; }
     public void setMpg(double mpg) { this.mpg = mpg; }
 
+// adds increase in speed if spoiler is on car
     @Override
     public double getSpeed() { return spoiler ? super.getSpeed() + 20 : super.getSpeed(); }
 
+// return car details and vehicle details
     @Override
     public String toString() {
         return super.toString() + "MPG:\t\t\t" + getMpg() + "\nColor:\t\t" + color + "\n";
@@ -107,6 +111,7 @@ public class Tractor extends Car {
 
     public boolean hasFarmHitch() { return farmHitch; }
 
+// overides and adds farmhitch if the farmitch is true
     @Override
     public String toString() {
         return super.toString() + "Farm Equipment Hitch:\t" + farmHitch + "\n";
@@ -135,15 +140,17 @@ public class Boat extends Vehicle {
 
 // Submarine Class inheriting from Boat
 public class Submarine extends Boat {
+//new variable
     private double depthRating;
 
     public Submarine(String brandName, double speed, int passengers, double cargoWeight, int engines, double knots, double depthRating) {
         super(brandName, speed, passengers, cargoWeight, engines, knots);
         this.depthRating = depthRating;
     }
-
+// getter for depth
     public double getDepthRating() { return depthRating; }
 
+// overide for sub related info
     @Override
     public String toString() {
         return super.toString() + "Depth Rating:\t" + depthRating + " meters\n";
@@ -161,6 +168,7 @@ public class Train extends Vehicle {
 
     public int getCarCount() { return carCount; }
 
+// overide for train stuff
     @Override
     public String toString() {
         return super.toString() + "Car Count:\t\t" + carCount + "\n";
@@ -179,6 +187,7 @@ public class AircraftCarrier extends Boat {
     public int getPlaneCapacity() { return planeCapacity; }
     public void setPlaneCapacity(int planeCapacity) { this.planeCapacity = planeCapacity; }
 
+// overide for boat and aircraft related info
     @Override
     public String toString() {
         return super.toString() + "Plane Capacity:\t" + planeCapacity + "\n";
@@ -243,7 +252,7 @@ public class Drone extends Plane {
         return super.toString() + "Distance From Controller:\t" + distanceFromController + " meters\n";
     }
 }
-
+// main class to print all the vehicles
 public class Main {
     public static void main(String[] args) {
         // Creating instances of different vehicles
@@ -291,7 +300,5 @@ public class Main {
     }
 }
 
-
-}
 
 
