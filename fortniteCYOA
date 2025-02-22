@@ -1,0 +1,58 @@
+ System.out.println("As you begin to glide down from the battle bus, you slowly angle towards the towering structures that make up the fabled lands known as Tilted Towers.  Getting closer to this monument of human ingenuity, which building do you choose?  A: Clock Tower B: Knepleys’s Pawn Shop C: Brick House");
+        
+        String nighty = scanner.nextLine();
+
+        if (nighty.equalsIgnoreCase("A")) {
+            System.out.println("Landing on top of the clock tower you quickly scurry inside the hatch upon the roof.  Below you on the floor lay a weapon and a health item.  It appears that’s your lucky day.  Pick them up? Yes/No");
+            String decision = scanner.nextLine();
+            if (decision.equalsIgnoreCase("Yes")) {
+                System.out.println("Grabbing your equipment, you leave the tower ready to find bigger and better things just as the storm begins its approach.");
+            } else {
+                System.out.println("Believing yourself to be better than that you disregard the FREE USEFUL items laying on the ground, and head out into the rest of Tilted Towers as the storm approaches");
+            }
+        } else if (nighty.equalsIgnoreCase("B")) {
+            System.out.println("As you drift down to the street and enter the Pawn Shop, you look around you to see barren shelves with few supplies.  The only thing you can muster up from the piles of broken jars and empty boxes is some healing supplies.  Do you take them? Ofc/Nah");
+            String decision = scanner.nextLine();
+            if (decision.equalsIgnoreCase("Ofc")) {
+                System.out.println("Grabbing the useful supplies you leave the pawn shop fully stocked, if not vulnerable, ready to face the storm as it slowly encroaches on the city.");
+            } else {
+                System.out.println("ignoring vital supplies that could save your life later on, you leave the pawn shop with nothing more than some prayers and a dream, a dream to get that Vic-Roy all by yourself");
+            }
+        } else if (nighty.equalsIgnoreCase("C")) {
+            System.out.println("Choosing the most basic option of the three, you guide yourself to the floor and enter the brick house.  Inside you find sparse traces of life, with no signs of any life.  Checking upstairs you find a partially cracked safe, with a loaded gun inside.  Do you pick it up? Sure/Nope");
+            String decision = scanner.nextLine();
+            if (decision.equalsIgnoreCase("Sure")) {
+                System.out.println("Making the very smart decision to be armed and dangerous, you exit the house, making your way deeper into Tilted Towers, as the storm begins to permeate the surrounding hills.");
+            } else {
+                System.out.println("Being a pacifist at heart you decide guns just aren’t for you.  Realizing that this house has been a waste of time you decide to leave and explore the rest of Tilted Towers, as the storm slowly gathers at its edges");
+            }
+        }
+        
+        System.out.println("Descending slowly towards the dark, dank, sludgy excuse of a prison known as moisty mires, you begin to scope out different places to land, without having to land in the disgusting muck that covers the ground.  Where do you land?  C: Broken walls D: Guard Tower E: Tree House");
+        nighty = scanner.nextLine();
+
+        if (nighty.equalsIgnoreCase("C")) {
+            System.out.println("The crumbling exterior of the prison approaches you, as your feet touch the ground, you notice the remains of a supply room lay around you. Apparently the spot where you landed used to hold the prison's major storage facility.  As you walk through the rows of storage containers and some supplies that could be useful later to heal yourself.  Do you pick them up? obviously/perchance");
+            String decision = scanner.nextLine();
+            if (decision.equalsIgnoreCase("Obviously")) {
+                System.out.println("Grabbing your medical supplies you slowly trudge through the filth and muck to find higher ground, and escape the ever approaching storm rolls in behind you.");
+            } else {
+                System.out.println("After thinking one of the most insufferable words known to man, you ignore the supplies and begin to wander throughout the swamp, looking for others to torture with your abhorrent vernacular, as the storm creeps into the Mire.");
+            }
+        } else if (nighty.equalsIgnoreCase("D")) {
+            System.out.println("Landing upon the roof of the guard tower, you crawl through the busted window and into the structure.  The room appears to be left in a hurry, with paper and random items strewn around the room.  Along the desk however, lies a weapon left by a former guard.  Pick it up? Yuh/Nuh");
+            String decision = scanner.nextLine();
+            if (decision.equalsIgnoreCase("Yuh")) {
+                System.out.println("Doing the smart thing you grab the weapon, collecting your wits, and head outside to face the storm that roils all around you.");
+            } else {
+                System.out.println("ignoring the reasonable and smart option you opt for fighting with nothing, as you head outside to face the oncoming storm and the threat of combat.");
+            }
+        } else if (nighty.equalsIgnoreCase("E")) {
+            System.out.println("Choosing the coolest looking landing spot, you arrive on top of the treehouse.  Entering the building proper you realize this isn’t truly a tree house, but something closer to a sniper nest, with both weapons and supplies readily available.  Do you grab them? Indubitably/Meh");
+            String decision = scanner.nextLine();
+            if (decision.equalsIgnoreCase("Indubitably")) {
+                System.out.println("“With a full arsenal and the supplies to back it up, you think to yourself how this is real firepower.  As you begin to explore the rest of the swamp, you watch as the walls of fog and thunder enclose the island from all sides");
+            } else {
+                System.out.println("Forsaking the copious gifts you were so graciously given, you jump out of the tree house and land knee deep in murky, still, water.  As you stand in the grime and sludge as the storm of purple energy and light tightens its grip around the island, slowly strangling all life upon it.");
+            }
+        }
