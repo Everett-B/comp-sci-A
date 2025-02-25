@@ -1,0 +1,36 @@
+import java.util.*;
+public class IfelseFortnite {
+
+    public static void main(String[] args) {
+        Random Skun = new Random();
+        int LocTilt;
+        int LocMoist;
+        int LocSalt;
+        
+        
+        
+        LocTilt = Skun.nextInt(3) + 1;
+        
+      if (LocTilt == 1){
+        System.out.println("""
+                           As you begin to glide down from the battle bus, you slowly angle towards the towering structures that make up the fabled lands known as Tilted Towers.
+                            Getting closer to this monument of human ingenuity, you land on top of the clock tower as you quickly scurry inside the hatch upon the roof.     
+                            Grabbing your equipment, you leave the tower ready to find bigger and better things,
+                            just as the storm begins its approach.""");
+    }  if (LocTilt == 2){
+            System.out.println("""
+                           As you begin to glide down from the battle bus, you slowly angle towards the towering structures that make up the fabled lands known as Tilted Towers.
+                           Getting closer to this monument of human ingenuity, you  you drift down to the street and enter the Pawn Shop, 
+                           you look around you to see barren shelves with few supplies.  Grabbing the useful supplies you leave the pawn shop fully stocked, if not anxious,  
+                           ready to face the storm as it slowly encroaches on the city""");
+    }  if (LocTilt == 3){
+         System.out.println("""
+                           As you begin to glide down from the battle bus, you slowly angle towards the towering structures that make up the fabled lands known as Tilted Towers.
+                           Getting closer to this monument of human ingenuity, you  Choosing the most basic option, you guide yourself to the floor and enter the brick house.  
+                           Inside you find sparse traces of life, with the only thing stirring being the dust you kick up as you enter.
+                           Searching the house you discover a modicum of resoruces, all of which will help you in the upcoming fighting.
+                           You leave the house with nothing more than some prayers and a dream, 
+                            a dream to get that Vic-Roy all by yourself.
+                           """);
+    }
+}
