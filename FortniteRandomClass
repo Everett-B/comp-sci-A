@@ -2,13 +2,16 @@ import java.util.*;
 public class IfelseFortnite {
 
     public static void main(String[] args) {
+        System.out.println("Choose Location: 1.Tilted Towers  2.Moisty Mires  3.Salty Springs");
+        Scanner Skuttle = new Scanner(System.in);
         Random Skun = new Random();
         int LocTilt;
         int LocMoist;
         int LocSalt;
+        int LocInt;
+        LocInt = Skuttle.nextInt();
         
-        
-        
+        if (LocInt == 1){
         LocTilt = Skun.nextInt(3) + 1;
         
       if (LocTilt == 1){
@@ -32,5 +35,71 @@ public class IfelseFortnite {
                            You leave the house with nothing more than some prayers and a dream, 
                             a dream to get that Vic-Roy all by yourself.
                            """);
+            }
+        }  
+        if (LocInt == 2){
+        LocMoist = Skun.nextInt(3) + 1;
+        if (LocMoist == 1){
+            System.out.println("""
+                               Descending slowly towards the dark, dank, sludgy excuse of a prison known as moisty mires, you begin to scope out different places to land,
+                                without having to land in the disgusting muck that covers the ground.
+                                Noticing a lone gaurd tower, you decide to land upon the roof, and crawl through the busted window and into the structure.  
+                                The room appears to be left in a hurry, with some munitions and supplies left behind in the scramble.
+                                Collecting the materials you jump out of the gaurd station and land knee deep in murky, still, water. 
+                                As you stand in the grime and sludge as the storm of purple energy and light tightens its grip around the island, 
+                                slowly strangling all life upon it.""");
+            }
+        if (LocMoist == 2){
+        System.out.println("""
+                           Descending slowly towards the dark, dank, sludgy excuse of a prison known as moisty mires, you begin to scope out different places to land,
+                            without having to land in the disgusting muck that covers the ground.
+                            Chooisng to land in the coolest spot, you drop onto a lone treehouse perched among the exterior forest surroudning the prison
+                            Entering the building proper you realize this is not truly a tree house, but something closer to a sniper nest, with both weapons and supplies readily available. 
+                            With a full arsenal and the supplies to back it up, you think to yourself how this is real firepower.   
+                            As you begin to explore the rest of the swamp, you watch as the walls of fog and thunder enclose the island from all sides """);
+            }
+        if (LocMoist == 3){
+           System.out.println("""
+                              Descending slowly towards the dark, dank, sludgy excuse of a prison known as moisty mires, you begin to scope out different places to land,
+                               without having to land in the disgusting muck that covers the ground. 
+                               As the crumbling exterior of the prison approaches you, your feet touch the ground.  
+                               Upon landing you notice the remains of a supply room lay around you.
+                               Apparently the spot where you landed used to hold the prison's major storage facility.
+                               As you walk through the rows of storage containers and some supplies, you grab some necessities and protection. 
+                               Feeling armed and dangerous, you beign to trudge through the filth and muck to find higher ground, 
+                               and escape the ever approaching storm rolls in behind you.  """);  
+            }
+        }
+        if (LocInt == 3){
+        LocSalt = Skun.nextInt(3) + 1;
+        if (LocSalt == 1){
+            System.out.println("""
+                                As you approach the suburban hellscape commonly referred to as Salty Springs, you can tell plenty of other people decided to make their temporary residence here as well. 
+                                Choosing to land at a larger multi-storied blue house, you crash through the window and begin to scavenge for supplies.  
+                                Finding a loaded gun and some medical equipment, you spend a brief moment to enjoy the interior home decor (late 90's post modern/Brutalist), 
+                                then head out into the rest of the HOA controlled warzone, as the storms coagulates around you  """);
+        }
+        if (LocSalt == 2){
+        System.out.println("""
+                           As you approach the suburban hellscape commonly referred to as Salty Springs, 
+                            you can tell plenty of other people decided to make their temporary residence here as well. 
+                            Choosing a more rustic single storied abode, you land on the quaint porch and wander inside.
+                            Finding some basic supplies and protection in the little house on the prairie, 
+                            you exit the backdoor and begin to explore the rest of suburbia, as the malignent cloud of death drifts between you feet  """);
+        }
+        if (LocSalt == 3){
+           System.out.println("""
+                              As you approach the suburban hellscape commonly referred to as Salty Springs, 
+                              you can tell plenty of other people decided to make their temporary residence here as well.
+                              Rather than landing at a smart place like a house or a safe place like the mountain off to the west, you choose to go the very small bus stop outside of town.
+                              Strangely, you find a large stockpile of weapons waiting for you inside the stationary bus parked infront of the stop, along with some simple medical supplies.
+                              Freshly stocked despite the absurdity of the situation, you gather your supplies and approach the town proper, 
+                              as the sounds of conflict and warfare are being slowly drowned by the whisper of the oncoming wave of shadow
+                                """);  
+        }
+        }
+        
+        
+           
     }
 }
