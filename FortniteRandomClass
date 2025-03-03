@@ -1,7 +1,6 @@
 import java.util.*;
-public class IfelseFortnite {
-
-    public static void main(String[] args) {
+public class Randomfort {
+      public static void main(String[] args) {
         System.out.println("Choose Location: 1.Tilted Towers  2.Moisty Mires  3.Salty Springs");
         Scanner Skuttle = new Scanner(System.in);
         Random Skun = new Random();
@@ -9,6 +8,58 @@ public class IfelseFortnite {
         int LocMoist;
         int LocSalt;
         int LocInt;
+        int LocRan;
+        String Soccer = ("""
+                         Climbing between to large hills who stand at attention like sentries, lays a small but well maintained indoor soccer field.  
+                         The locks on the door have been busted, but the rest of the field's overall appearance seems to be in perfect condition.  
+                         The empty stands are littered with the remnants of old bags of food and minor pieces of litter, 
+                         as though a game had just ended as soon as you entered the room.  
+                         You can almost hear the echoes of the passion and anguish of the fans as you walk between the rows of metal bleachers, leaving you with a discomforting feeling.  
+                         While perusing the stadium, you happen to spot a small safe behind the front counter.  
+                         Peeking inside you spot a small amount of supplies inside, readily available for you to pick up and use.""");
+        String Haunted = ("""
+                          After a hard fought victory, you look for a place to take a moment to breathe, as the air becomes still once again, a sharp contrast to the hail of bullets that just occupied it a moment ago.  
+                          As you wander through the island trying to find a place to hold up, you stumble onto a decrepit stone building on top of a grey and decaying hill. 
+                          Creeping towards its exterior you notice the age of the stone, and the marks upon the walls.
+                            This house has existed since before your time, and it will continue to way after you are nothing more than a memory.
+                          Inside this fortress of time you notice the abundance of supplies lining the shelves, freshly polished and restocked.
+                          Someone apparently was using this place as a staging ground for some very major plans.""");
+        String Flush = ("""
+                        Reeling from the struggle of your last fight, you desperately search for any modicum of shelter.  
+                        Cresting a low hill you spot off in the distance a large brick factory, seemingly abandoned with shrapnel and remnants of conflict surrounding the premises.  
+                        As you cautiously approach the exterior of the imposing structure, you read the words on the side of the building: \u201cFlush Factory\u201d.  
+                        Walking through the massive roll-up doors, you wander through the still conveyor belts, lined with their porcelain products.  
+                        Oddly enough, while peeping into some of the toilets you find random pieces of supplies, guns and health items, scattered among the terracotta thrones. """);
+        String Junk = ("""
+                        Dragging yourself out of the skirmish, you find yourself right next to an abandoned junkyard, 
+                       filled with towering piles of rusted metal and forgotten items.  
+                       Wandering through these pillars of forgotten relics and ages gone by, 
+                       you spot the cleanest corner of the yard, which contains a singular shack with a porch chair outside.  
+                       Investigating further you find some basic supplies inside, and some minor weaponry.""");
+        String Dusty = ("""
+                        The shape of the massive warehouses rise up in front of you,
+                        as you drift towards them, slightly disoriented after your last conflict.  
+                        The goliath structures offer up safety and shelter for a brief moment, 
+                        allowing you to recover momentarily in this moment of peace.  
+                        While resting your aching body you notice some random supplies scattered around the warehouses.  
+                        Searching through the items you find some supplies and basic necessities, 
+                        something you sorely need after that last fight.""");
+        String Retail = ("""
+                         Trying to catch your breath and recover after that last battle, you stumble through the green valley, 
+                         trying to find respite against the invisible enemies that plague your subconscious.  
+                         Walking a bit farther through the valley you notice the signs of civilization, 
+                         as a robust town appears off to your left, sheltered by some surrounding hills and trees.  Cautiously approaching this new location, you hear nothing besides your own footsteps, giving you the sense that this place has been abandoned.  
+                         Walking down the central street you glimpse signs of a quick evacuation, 
+                         with many pieces of furniture overturned and items strewn about the floor.  
+                         Pushing inside some of the houses you find some much needed materials that were left behind, 
+                         apparently deemed not vital enough to make the rapid exodus.""");
+        String Loot = ("""
+                       Reaching one of the final pieces of land not swallowed by the storm, you approach the edge of this roughly spherical body of water known as Loot Lake.  
+                       Wading through the knee high water, you approach the house that rests in the eye of the lake, 
+                       a bastion of safety against the threat of others and the storm.  
+                       Walking up the stairs you enter the wooden house, you feel the age of this building, and marvel at how long this place has remained despite all odds.  
+                       While exploring the rooms you find some much needed supplies and ammo, 
+                       giving you a chance to restock.""");
         LocInt = Skuttle.nextInt();
         
         if (LocInt == 1){
@@ -99,7 +150,27 @@ public class IfelseFortnite {
         }
         }
         
-        
-           
+        LocRan = Skun.nextInt(7) + 1;
+         if (LocRan == 1){
+            System.out.println(Soccer);
+        }
+         if (LocRan == 2){
+            System.out.println(Haunted);
+        }
+         if (LocRan == 3){
+            System.out.println(Flush);
+        }
+         if (LocRan == 4){
+            System.out.println(Junk);
+        }
+         if (LocRan == 5){
+            System.out.println(Dusty);
+        }
+         if (LocRan == 6){
+            System.out.println(Retail);
+        }
+         if (LocRan == 7){
+            System.out.println(Loot);
+        }
     }
 }
