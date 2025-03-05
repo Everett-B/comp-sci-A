@@ -27,22 +27,27 @@ public class Fortnite {
                          The locks on the door have been busted, but the rest of the field's overall appearance seems to be in perfect condition.  
                          The empty stands are littered with the remnants of old bags of food and minor pieces of litter, 
                          as though a game had just ended as soon as you entered the room.  
-                         You can almost hear the echoes of the passion and anguish of the fans as you walk between the rows of metal bleachers, leaving you with a discomforting feeling.  
+                         You can almost hear the echoes of the passion and anguish of the fans as you walk between the rows of metal bleachers, 
+                         leaving you with a discomforting feeling.  
                          While perusing the stadium, you happen to spot a small safe behind the front counter.  
                          Peeking inside you spot a small amount of supplies inside, readily available for you to pick up and use.""");
         String Haunted = ("""
-                          After a hard fought victory, you look for a place to take a moment to breathe, as the air becomes still once again, a sharp contrast to the hail of bullets that just occupied it a moment ago.  
-                          As you wander through the island trying to find a place to hold up, you stumble onto a decrepit stone building on top of a grey and decaying hill. 
+                          After a hard fought victory, you look for a place to take a moment to breathe, as the air becomes still once again,
+                          a sharp contrast to the hail of bullets that just occupied it a moment ago.  
+                          As you wander through the island trying to find a place to hold up, 
+                          you stumble onto a decrepit stone building on top of a grey and decaying hill. 
                           Creeping towards its exterior you notice the age of the stone, and the marks upon the walls.
-                            This house has existed since before your time, and it will continue to way after you are nothing more than a memory.
+                          This house has existed since before your time, and it will continue to way after you are nothing more than a memory.
                           Inside this fortress of time you notice the abundance of supplies lining the shelves, freshly polished and restocked.
                           Someone apparently was using this place as a staging ground for some very major plans.""");
         String Flush = ("""
                         Reeling from the struggle of your last fight, you desperately search for any modicum of shelter.  
-                        Cresting a low hill you spot off in the distance a large brick factory, seemingly abandoned with shrapnel and remnants of conflict surrounding the premises.  
+                        Cresting a low hill you spot off in the distance a large brick factory, 
+                        seemingly abandoned with shrapnel and remnants of conflict surrounding the premises.  
                         As you cautiously approach the exterior of the imposing structure, you read the words on the side of the building: Flush Factory.  
                         Walking through the massive roll-up doors, you wander through the still conveyor belts, lined with their porcelain products.  
-                        Oddly enough, while peeping into some of the toilets you find random pieces of supplies, guns and health items, scattered among the terracotta thrones. """);
+                        Oddly enough, while peeping into some of the toilets you find random pieces of supplies, guns and health items, 
+                        scattered among the terracotta thrones. """);
         String Junk = ("""
                         Dragging yourself out of the skirmish, you find yourself right next to an abandoned junkyard, 
                        filled with towering piles of rusted metal and forgotten items.  
@@ -61,23 +66,27 @@ public class Fortnite {
                          Trying to catch your breath and recover after that last battle, you stumble through the green valley, 
                          trying to find respite against the invisible enemies that plague your subconscious.  
                          Walking a bit farther through the valley you notice the signs of civilization, 
-                         as a robust town appears off to your left, sheltered by some surrounding hills and trees.  Cautiously approaching this new location, you hear nothing besides your own footsteps, giving you the sense that this place has been abandoned.  
+                         as a robust town appears off to your left, sheltered by some surrounding hills and trees.  
+                         Cautiously approaching this new location, you hear nothing besides your own footsteps, 
+                         giving you the sense that this place has been abandoned.  
                          Walking down the central street you glimpse signs of a quick evacuation, 
                          with many pieces of furniture overturned and items strewn about the floor.  
                          Pushing inside some of the houses you find some much needed materials that were left behind, 
                          apparently deemed not vital enough to make the rapid exodus.""");
         String Loot = ("""
-                       Reaching one of the final pieces of land not swallowed by the storm, you approach the edge of this roughly spherical body of water known as Loot Lake.  
+                       Reaching one of the final pieces of land not swallowed by the storm, 
+                       you approach the edge of this roughly spherical body of water known as Loot Lake.  
                        Wading through the knee high water, you approach the house that rests in the eye of the lake, 
                        a bastion of safety against the threat of others and the storm.  
-                       Walking up the stairs you enter the wooden house, you feel the age of this building, and marvel at how long this place has remained despite all odds.  
+                       Walking up the stairs you enter the wooden house, you feel the age of this building, 
+                       and marvel at how long this place has remained despite all odds.  
                        While exploring the rooms you find some much needed supplies and ammo, 
                        giving you a chance to restock.""");
        Random r = new Random();
        int rWe;
        Scanner scan = new Scanner(System.in);
        System.out.println("Welcome to Fortnite!\nIn this game you have to land, loot, and survive the seven circles, fighting your way to survive");
-       System.out.println("Choose Location: 1.Tilted Towers  2.Moisty Mires  3.Salty Springs");
+       System.out.println("Choose Location: press 1. for Tilted Towers  2. for Moisty Mires  3. for Salty Springs");
        //initialize the none healing
        Heal none = new Heal("N/A", "N/A", 0, 0);
        // create player object
@@ -1749,6 +1758,11 @@ public class Fortnite {
                     System.out.println("You were DEFEATED!! :( ");
             } else if (enemy7.getHealth() <= 0){
                     System.out.println("""
+                                       
+                                       VICTORY!!!!!
+                                       
+                                       
+                                       
                                        As you stand there, utop the mound of corpses you left in your brutal wake, the storm slows, halting its 
                                         seemingly endless advance.  The sky opens above you, as the fabled Battle Bus swoops low, 
                                        blaring its horn to celebrate your victory over those other lesser mortals
