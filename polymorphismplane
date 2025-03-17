@@ -1,0 +1,64 @@
+import java.util.*;
+public class Polymorphismstuff {
+
+    public static void main(String[] args) {
+     ArrayList<Aircraft> aircraftList = new ArrayList<>();
+      
+     Aircraft aircraft = new Aircraft(2);
+     singlenginplan plane = new singlenginplan (2, "piston engine");
+     helicopter helicopter = new helicopter (0, "turboshaft",4);
+     
+     //add objcts to an array lis
+     aircraftList.add(aircraft);
+     aircraftList.add(plane);
+     aircraftList.add(helicopter);
+
+     //prints objcts
+     for (Aircraft a: aircraftList){
+         
+         System.out.println(a);
+     }
+    }
+   
+}
+  class Aircraft{
+        protected int wings;
+        
+        public Aircraft(int wings){
+        this.wings = wings;
+        
+        }
+        //return statement
+        @Override
+        public String toString(){
+            return "Aircraft with " + wings + " wings";
+        }
+    }
+//child class of aircraft
+    class singlenginplan extends Aircraft {
+        protected String rotengine;
+    public singlenginplan(int wings, String rotengine) {
+        super(wings);
+        this.rotengine = rotengine;
+    }
+        //return statement
+        @Override
+        public String toString(){
+         return "Single Engine Plane with " + wings + " wings and a " + rotengine;  
+        }
+    }
+//helicopter inherits from single engine plane
+ class helicopter extends singlenginplan {
+     private int rotblades;
+    public helicopter(int wings, String rotengine,int rotblades) {
+        super(wings, rotengine);
+        this.rotblades = rotblades;
+    }
+    //return statement
+     @Override
+     public String toString(){
+         
+         return "Helecopter with "+ wings + " wings, a " + rotengine + ", and " + rotblades + " rotary blades";
+         
+     }
+ }
