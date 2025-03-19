@@ -1,3 +1,5 @@
+ * @author ebrown2025
+ */
 public class Sort {
     public static void main(String[] args) {
         Contact[] friends = new Contact[8];
@@ -9,15 +11,15 @@ public class Sort {
         friends[5] = new Contact("Frank", "Phelps", "322-555-2284");
         friends[6] = new Contact("Mario", "Guzman", "804-555-9066");
         friends[7] = new Contact("Marsha", "Grant", "243-555-2837");
-
+//prints the order in numerical order
         Sorting.selectionSort(friends);
-        System.out.println("*** Selection Sort (By Phone Number) ***");
+        System.out.println("***Selection Sort***");
         for (Contact friend : friends)
             System.out.println(friend);
-
+//prints the order given
         Sorting.insertionSort(friends);
         System.out.println();
-        System.out.println("*** Insertion Sort (By Phone Number) ***");
+        System.out.println("***Insertion Sort***");
         for (Contact friend : friends)
             System.out.println(friend);
     }
@@ -59,7 +61,7 @@ class Contact implements Comparable<Contact> {
         lastName = last;
         phone = telephone;
     }
-
+//return statement
     public String toString() {
         return lastName + ", " + firstName + "\t" + phone;
     }
@@ -71,7 +73,7 @@ class Contact implements Comparable<Contact> {
     public int compareTo(Contact other) {
         return phone.compareTo(other.getPhone());
     }
-
+// setters/getters
     public String getFirstName() {
         return firstName;
     }
@@ -83,4 +85,5 @@ class Contact implements Comparable<Contact> {
     public String getPhone() {
         return phone;
     }
+
 }
