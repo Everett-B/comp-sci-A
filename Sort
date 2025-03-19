@@ -1,4 +1,4 @@
- * @author ebrown2025
+* @author ebrown2025
  */
 public class Sort {
     public static void main(String[] args) {
