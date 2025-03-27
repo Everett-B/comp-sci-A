@@ -1,8 +1,7 @@
-import java.util.Arrays;
+import java.util.*;
+public class PaschalsTriangle {
 
-public class PascalsTriangle {
-    
-    public static int[] getPascalsRow(int n) {
+        public static int[] getPascalsRow(int n) {
         if (n == 0) {
             return new int[]{1};
         }
@@ -21,7 +20,9 @@ public class PascalsTriangle {
     }
     
     public static void main(String[] args) {
-        int n = 5; // Change this value to get a different row
+        System.out.println("input number for triangle:");
+        Scanner S = new Scanner(System.in);
+        int n = S.nextInt();
         int[] row = getPascalsRow(n);
         System.out.println(Arrays.toString(row));
     }
