@@ -1,0 +1,28 @@
+import java.util.Arrays;
+
+public class PascalsTriangle {
+    
+    public static int[] getPascalsRow(int n) {
+        if (n == 0) {
+            return new int[]{1};
+        }
+        
+        int[] prevRow = getPascalsRow(n - 1);
+        int[] currRow = new int[n + 1];
+        
+        currRow[0] = 1;
+        currRow[n] = 1;
+        
+        for (int i = 1; i < n; i++) {
+            currRow[i] = prevRow[i - 1] + prevRow[i];
+        }
+        
+        return currRow;
+    }
+    
+    public static void main(String[] args) {
+        int n = 5; // Change this value to get a different row
+        int[] row = getPascalsRow(n);
+        System.out.println(Arrays.toString(row));
+    }
+}
