@@ -1,4 +1,10 @@
-package lagoonrental;
+package com.mycompany.lagoonrental;
+
+/**
+ *
+ * @author ebrown2025
+ */
+
 
 import java.awt.EventQueue;
 import javax.swing.*;
@@ -6,7 +12,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class LagoonRentalApp implements ActionListener {
+public class Lagoonrental implements ActionListener {
     private JFrame frame;
     private JTextField textField_Quantity;
     private JTextField textField_Duration;
@@ -22,7 +28,7 @@ public class LagoonRentalApp implements ActionListener {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
-                LagoonRentalApp window = new LagoonRentalApp();
+                Lagoonrental window = new Lagoonrental();
                 window.frame.setVisible(true);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -30,7 +36,7 @@ public class LagoonRentalApp implements ActionListener {
         });
     }
 
-    public LagoonRentalApp() {
+    public Lagoonrental() {
         initialize();
     }
 
@@ -115,6 +121,9 @@ public class LagoonRentalApp implements ActionListener {
             taResult.setText(output);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(frame, "Please enter valid numeric values for quantity and duration.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
         }
     }
 }
