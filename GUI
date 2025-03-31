@@ -1,0 +1,120 @@
+package lagoonrental;
+
+import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class LagoonRentalApp implements ActionListener {
+    private JFrame frame;
+    private JTextField textField_Quantity;
+    private JTextField textField_Duration;
+    private JTextField textField_Date;
+    private JComboBox<String> comboBox_Item;
+    private JTextArea taResult;
+    private JButton btnSubmit;
+    
+    private static final double VEHICLE_RATE = 50.0;
+    private static final double PADDLE_BOARD_RATE = 20.0;
+    private static final double KAYAK_RATE = 25.0;
+    
+    public static void main(String[] args) {
+        EventQueue.invokeLater(() -> {
+            try {
+                LagoonRentalApp window = new LagoonRentalApp();
+                window.frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public LagoonRentalApp() {
+        initialize();
+    }
+
+    private void initialize() {
+        frame = new JFrame();
+        frame.setBounds(100, 100, 500, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setLayout(null);
+        frame.getContentPane().setBackground(Color.LIGHT_GRAY);
+        
+        JLabel lblItem = new JLabel("Select Rental Item:");
+        lblItem.setBounds(30, 30, 150, 20);
+        frame.getContentPane().add(lblItem);
+        
+        comboBox_Item = new JComboBox<>(new String[]{"Motor Vehicle", "Paddle Board", "Kayak"});
+        comboBox_Item.setBounds(180, 30, 150, 20);
+        frame.getContentPane().add(comboBox_Item);
+        
+        JLabel lblQuantity = new JLabel("Number of Rentals:");
+        lblQuantity.setBounds(30, 70, 150, 20);
+        frame.getContentPane().add(lblQuantity);
+        
+        textField_Quantity = new JTextField();
+        textField_Quantity.setBounds(180, 70, 50, 20);
+        frame.getContentPane().add(textField_Quantity);
+        
+        JLabel lblDuration = new JLabel("Rental Duration (hours):");
+        lblDuration.setBounds(30, 110, 150, 20);
+        frame.getContentPane().add(lblDuration);
+        
+        textField_Duration = new JTextField();
+        textField_Duration.setBounds(180, 110, 50, 20);
+        frame.getContentPane().add(textField_Duration);
+        
+        JLabel lblDate = new JLabel("Rental Date:");
+        lblDate.setBounds(30, 150, 150, 20);
+        frame.getContentPane().add(lblDate);
+        
+        textField_Date = new JTextField();
+        textField_Date.setBounds(180, 150, 100, 20);
+        frame.getContentPane().add(textField_Date);
+        
+        btnSubmit = new JButton("Submit");
+        btnSubmit.setBounds(180, 190, 100, 25);
+        btnSubmit.addActionListener(this);
+        frame.getContentPane().add(btnSubmit);
+        
+        taResult = new JTextArea();
+        taResult.setBounds(30, 230, 400, 100);
+        frame.getContentPane().add(taResult);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnSubmit) {
+            calculateRental();
+        }
+    }
+
+    private void calculateRental() {
+        try {
+            String item = (String) comboBox_Item.getSelectedItem();
+            int quantity = Integer.parseInt(textField_Quantity.getText());
+            int duration = Integer.parseInt(textField_Duration.getText());
+            String date = textField_Date.getText();
+            
+            double rate = switch (item) {
+                case "Motor Vehicle" -> VEHICLE_RATE;
+                case "Paddle Board" -> PADDLE_BOARD_RATE;
+                case "Kayak" -> KAYAK_RATE;
+                default -> 0.0;
+            };
+            
+            double totalCost = quantity * duration * rate;
+            
+            String output = "Rental Summary:\n" +
+                    "Item: " + item + "\n" +
+                    "Quantity: " + quantity + "\n" +
+                    "Duration: " + duration + " hours\n" +
+                    "Date: " + date + "\n" +
+                    "Total Price: $" + totalCost;
+            
+            taResult.setText(output);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(frame, "Please enter valid numeric values for quantity and duration.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
