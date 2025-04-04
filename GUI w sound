@@ -1,12 +1,5 @@
-Yes! You can add sound effects when a button is clicked or when an item is selected in the combo box. Here’s how you can do it:
+package com.mycompany.guiwsound;
 
-### Steps:
-1. Load a `.wav` sound file using `Clip` from `javax.sound.sampled`.
-2. Play the sound when the button is clicked.
-3. Play the sound when the combo box selection changes.
-
-### Updated Code:
-```java
 import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.Color;
@@ -16,7 +9,7 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
-public class Lagoonrental implements ActionListener {
+public class GUIwsound implements ActionListener {
     private JFrame frame;
     private JTextField textField_Quantity;
     private JTextField textField_Duration;
@@ -32,7 +25,7 @@ public class Lagoonrental implements ActionListener {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
-                Lagoonrental window = new Lagoonrental();
+                GUIwsound window = new GUIwsound();
                 window.frame.setVisible(true);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -40,7 +33,7 @@ public class Lagoonrental implements ActionListener {
         });
     }
 
-    public Lagoonrental() {
+    public GUIwsound() {
         initialize();
     }
 
@@ -94,6 +87,7 @@ public class Lagoonrental implements ActionListener {
         frame.getContentPane().add(taResult);
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSubmit) {
             playSound("button_click.wav");
@@ -131,38 +125,7 @@ public class Lagoonrental implements ActionListener {
     }
 
     private void playSound(String soundFile) {
-        try {
-            File file = new File(soundFile);
-            if (!file.exists()) {
-                System.err.println("Sound file not found: " + soundFile);
-                return;
-            }
-
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioStream);
-            clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-            ex.printStackTrace();
+       
+     
         }
     }
-}
-```
-
-### What’s Added:
-1. **`playSound(String soundFile)` Method**  
-   - Plays a `.wav` file when called.
-   - If the file is missing, an error message is printed.
-
-2. **Button Click Sound**  
-   - `btnSubmit.addActionListener(this);` → Now plays `button_click.wav`.
-
-3. **Combo Box Selection Sound**  
-   - `comboBox_Item.addActionListener(e -> playSound("click.wav"));`  
-   - Plays `click.wav` whenever an item is selected.
-
-### Notes:
-- Ensure the sound files (`button_click.wav` and `click.wav`) exist in the same directory as the `.java` file or specify a full file path.
-- Use **.wav files only**, as `Clip` does not support `.mp3` without additional libraries.
-
-Let me know if you need more modifications! 🚀
